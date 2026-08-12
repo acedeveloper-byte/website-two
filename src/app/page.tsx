@@ -32,25 +32,25 @@ const featureItems = [
   },
 ];
 
-const aboutTravellyItems = [
+const aboutSiteItems = [
   {
-    title: 'About Travelly',
-    description: 'Travelly is a travel information platform built to help you plan with confidence, clarity and calm.',
+    title: `About ${SITE_NAME}`,
+    description: `${SITE_NAME} is a travel information platform built to help you plan with confidence, clarity and calm.`,
   },
   {
-    title: 'What Travelly Does',
-    description: 'We provide trusted flight details, destination insights, and friendly support for every journey.',
+    title: `What ${SITE_NAME} Does`,
+    description: 'We provide travel information, destination insights, and friendly support resources for every journey.',
   },
   {
     title: 'Looking for Assistance?',
-    description: 'Our team is ready to support your travel questions with phone, planning guidance, and trusted advice.',
+    description: 'Our team is ready to support your travel questions with phone, planning guidance, and assistance.',
   },
 ];
 
 const serviceItems = [
   {
     title: 'Quick Flight Search',
-    description: 'Instantly compare routes and general travel options so you know what to expect.',
+    description: 'Easily compare routes and general travel options so you know what to expect.',
   },
   {
     title: 'Smart Destination Guides',
@@ -75,7 +75,7 @@ export default function Home() {
         <div className="text-center mb-5">
           <h2 className="h2 fw-bold">Everything You Need for Your Journey</h2>
           <p className="text-muted mx-auto" style={{ maxWidth: 700 }}>
-            Travelly brings flight tools, destination guides, and helpful support together in one place, so planning your next trip feels clear, calm, and confident.
+            {SITE_NAME} brings flight tools, destination guides, and helpful support together in one place, so planning your next trip feels clear, calm, and confident.
           </p>
         </div>
         <div className="row g-4">
@@ -129,12 +129,12 @@ export default function Home() {
             <span className="badge section-dark-badge mb-2">About Us</span>
             <h2 className="h3 fw-bold text-white">A calmer way to plan your trip</h2>
             <p className="text-white-75 mb-0">
-              Travelly helps you discover flight options, destination advice, and travel assistance with clarity and ease.
+              {SITE_NAME} helps you discover flight options, destination advice, and travel assistance with clarity and ease.
             </p>
           </div>
 
 
-          {aboutTravellyItems.map((item) => (
+          {aboutSiteItems.map((item) => (
             <div className="col-lg-4" key={item.title}>
               <div className="p-4 rounded-4 section-dark-card h-100">
                 <h5 className="fw-semibold mb-2 text-white">{item.title}</h5>

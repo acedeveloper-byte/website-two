@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { PHONE_NUMBER } from '../config';
 
 export default function NotFound() {
   return (
@@ -14,7 +15,7 @@ export default function NotFound() {
           <Link href="/" className="btn btn-primary btn-lg px-4">
             Return Home
           </Link>
-          <a href="tel:+18334263964" className="btn btn-outline-secondary btn-lg px-4">
+          <a href={`tel:${PHONE_NUMBER}`} className="btn btn-outline-secondary btn-lg px-4">
             Call Support
           </a>
         </div>

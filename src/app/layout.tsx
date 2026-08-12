@@ -1,13 +1,15 @@
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./globals.css";
 import type { Metadata } from 'next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AOSProvider from '../components/AOSProvider';
+import { SITE_NAME, PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../config';
 
 export const metadata: Metadata = {
-  title: 'Travelly | Modern Travel Information',
-  description: 'A clean travel information website with flight guidance, destinations and assistance resources.',
+  title: `${SITE_NAME} | Travel Information & Planning Directory`,
+  description: 'An independent travel information directory offering travel planning guidance, flight route information, and assistance resources.',
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -30,12 +32,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <main>{children}</main>
         <Footer />
         <a
-          href="tel:+18334263964"
+          href={`tel:${PHONE_NUMBER}`}
           className="mobile-cta-bar d-md-none d-flex align-items-center justify-content-between px-3 py-3 text-white text-decoration-none"
         >
           <div>
             <strong>Talk to an Agent</strong>
-            <div className="small opacity-75">+1-833-426-3964</div>
+            <div className="small opacity-75">{PHONE_NUMBER_DISPLAY}</div>
           </div>
           <span className="btn btn-light btn-sm text-primary">Call</span>
         </a>

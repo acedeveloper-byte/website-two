@@ -26,8 +26,8 @@ export const faqs: FAQItem[] = [
     answer: 'Yes. Our platform helps you plan smarter by offering itinerary suggestions, planning resources and travel advice.',
   },
   {
-    id: 'representative',
-    question: 'Can I speak with a travel representative?',
-    answer: 'Yes. Our team is available to offer guidance and answer questions about travel options and planning.',
+    id: 'planning-support',
+    question: 'Can I speak with a travel support specialist?',
+    answer: 'Yes. Our support team is available to offer guidance and answer questions about travel options and planning.',
   },
 ];

@@ -1,3 +1,5 @@
+import { PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../../config';
+
 export default function ContactPage() {
   return (
     <section className="container py-5">
@@ -8,9 +10,13 @@ export default function ContactPage() {
           <div className="card border-0 rounded-4 shadow-sm p-4">
             <h5 className="fw-semibold">Talk to an Agent</h5>
             <p className="text-muted mb-1">Phone</p>
-            <p className="fw-bold">+1-833-426-3964</p>
+            <p className="fw-bold">
+              <a href={`tel:${PHONE_NUMBER}`} className="text-decoration-none text-dark">
+                {PHONE_NUMBER_DISPLAY}
+              </a>
+            </p>
             <p className="text-muted mb-0">Email</p>
-            <p className="fw-bold">support@example.com</p>
+            <p className="fw-bold">support@flightagencyhub.com</p>
           </div>
         </div>
         <div className="col-lg-6">

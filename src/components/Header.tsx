@@ -20,7 +20,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <div className="container">
           <Link className="navbar-brand fw-bold text-dark" href="/">
-            {SITE_NAME}
+          <img src="/web_logo.png" className="img-fluid w-50" />
           </Link>
           <button
             className="navbar-toggler"

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SITE_NAME } from '../config';
+import { SITE_NAME, PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../config';
 import CTASection from './CTASection';
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="row gy-4">
           <div className="col-12 col-md-6 col-lg-3">
-            <h5 className="text-white fw-bold">{SITE_NAME}</h5>
+            <h5 className="text-white fw-bold"> <img src="/flightagencyhub_horizontal_logo.png" className="img-fluid w-80 rounded" /></h5>
             <p className="text-white-75 mb-4">
               A modern travel information platform for smarter planning and confident journeys.
             </p>
@@ -54,7 +54,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-        
+
           <div className="col-12 col-sm-6 col-lg-2">
             <h6 className="text-white fw-semibold">Legal</h6>
             <ul className="list-unstyled">
@@ -79,26 +79,26 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>  
-          
-          
+          </div>
+
+
           <div className="col-12 col-sm-6 col-lg-3">
             <h6 className="text-white fw-semibold">Contact</h6>
             <div className="text-white-75">
               <p className="mb-2">Phone</p>
-              <a className="d-block text-white fw-semibold text-decoration-none mb-3" href="tel:+18334263964">
-                +1-833-426-3964
+              <a className="d-block text-white fw-semibold text-decoration-none mb-3" href={`tel:${PHONE_NUMBER}`}>
+                {PHONE_NUMBER_DISPLAY}
               </a>
               <p className="mb-2">Email</p>
-              <a className="d-block text-white fw-semibold text-decoration-none" href="mailto:support@example.com">
-                support@example.com
+              <a className="d-block text-white fw-semibold text-decoration-none" href="mailto:support@flightagencyhub.com">
+                support@flightagencyhub.com
               </a>
             </div>
           </div>
         </div>
         <div className="border-top border-white-10 mt-4 pt-3">
-          <p className="mb-0 small text-white"><span className="fw-bold">Disclaimer</span><br/>
-{SITE_NAME} provides independent travel information, fare research guidance, destination information, and general flight planning resources. We do not operate flights, issue tickets, manage airline bookings, or provide official airline customer support.</p>
+          <p className="mb-0 small text-white"><span className="fw-bold">Disclaimer</span><br />
+            {SITE_NAME} provides independent travel information, fare research guidance, destination information, and general flight planning resources. We do not operate flights, issue tickets, manage airline bookings, or provide official customer support on behalf of any airline.</p>
         </div>
         <div className="border-top text-center border-white-10 mt-4 pt-3">
           <p className="mb-0 small text-white-50">© 2026 {SITE_NAME}. All rights reserved.</p>
