@@ -98,7 +98,7 @@ const Footer = () => {
         </div>
         <div className="border-top border-white-10 mt-4 pt-3">
           <p className="mb-0 small text-white"><span className="fw-bold">Disclaimer</span><br/>
-Fare Eazy provides independent travel information, fare research guidance, destination information, and general flight planning resources. We do not operate flights, issue tickets, manage airline bookings, or provide official airline customer support.</p>
+{SITE_NAME} provides independent travel information, fare research guidance, destination information, and general flight planning resources. We do not operate flights, issue tickets, manage airline bookings, or provide official airline customer support.</p>
         </div>
         <div className="border-top text-center border-white-10 mt-4 pt-3">
           <p className="mb-0 small text-white-50">© 2026 {SITE_NAME}. All rights reserved.</p>
