@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import CTASection from '../components/CTASection';
 import DestinationCard from '../components/DestinationCard';
 import FAQ from '../components/FAQ';
