@@ -69,10 +69,6 @@ export default function Home() {
     <>
       <Hero />
 
-
-
-
-
       <section className="container py-5">
         <div className="text-center mb-5">
           <h2 className="h2 fw-bold">Everything You Need for Your Journey</h2>
