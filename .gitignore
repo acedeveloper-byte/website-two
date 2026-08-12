@@ -8,6 +8,13 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+
+# Next.js build output
+.next
+
+# Local env files
+.env
+.env.local
 dist
 dist-ssr
 *.local
