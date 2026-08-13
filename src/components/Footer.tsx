@@ -25,7 +25,7 @@ const Footer = () => {
               </li>
               
               <li className="mb-2">
-                <Link className="footer-link text-decoration-none fw-bold" href="/contact">
+                <Link className="footer-link text-decoration-none fw-bold" href="/contact-us">
                   Contact
                 </Link>
               </li>
@@ -66,6 +66,8 @@ const Footer = () => {
           <div className="col-12 col-sm-6 col-lg-2">
             <h6 className="text-white fw-semibold">Contact</h6>
             <div className="text-white-75">
+              <p className="mb-2">Address</p>
+              <p className="d-block text-white fw-semibold mb-3 small">1098 S Milwaukee Ave Suite 200<br />Wheeling, IL 60090</p>
               <p className="mb-2">Phone</p>
               <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-3" href={`tel:${PHONE_NUMBER}`}>
                 {PHONE_NUMBER_DISPLAY}

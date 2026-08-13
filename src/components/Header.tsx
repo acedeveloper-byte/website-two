@@ -10,7 +10,7 @@ const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'FAQ', path: '/faq' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Contact', path: '/contact-us' },
 ];
 
 const Header = () => {

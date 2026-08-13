@@ -9,8 +9,10 @@ export default function ContactPage() {
           <p className="text-muted">Reach out for general website questions or travel information inquiries related to route and destination research.</p>
           <div className="card border-0 rounded-4 shadow-sm p-4">
             <h5 className="fw-semibold">General Support</h5>
+            <p className="text-muted mb-1">Address</p>
+            <p className="fw-bold mb-3">1098 S Milwaukee Ave Suite 200<br />Wheeling, IL 60090</p>
             <p className="text-muted mb-1">Phone</p>
-            <p className="fw-bold">
+            <p className="fw-bold mb-3">
               <a href={`tel:${PHONE_NUMBER}`} className="text-decoration-none text-dark">
                 {PHONE_NUMBER_DISPLAY}
               </a>
