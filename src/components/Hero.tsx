@@ -17,12 +17,13 @@ const Hero = () => {
               Travel research for <span className="hero-title">routes, destinations, and trip planning.</span>
             </h1>
             
+            
           </div>
-          <div className="col-12 mt-5" data-aos="fade-up">
-            <FlightSearch />  
+          <div className="col-12 mt-4" data-aos="fade-up">
+            <FlightSearch />
           </div>
-          <div className="alert alert-light alert-dismissible fade show mx-auto" role="alert">
-              <strong>Independent Travel Assistance:</strong> We are a free, third-party travel information platform. Our team helps with airline contact information and general booking questions.
+          <div className="alert alert-light alert-dismissible fade show mx-auto" style={{ maxWidth: '600px' }} role="alert">
+              <strong>Independent Travel Assistance:</strong> We are a free, third-party travel information platform not affiliated with any airline. Our team helps with airline contact information and general booking questions at no charge.
             </div>
         </div>
       </div>

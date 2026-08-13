@@ -83,6 +83,12 @@ body {
   color:  var(--accent);
   font-style :italic
 }
+
+@media (max-width: 768px) {
+  .hero-title {
+    color: white;
+  }
+}
 .hero-icon {
   font-size: 1.2rem;
 
