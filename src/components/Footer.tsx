@@ -10,30 +10,11 @@ const Footer = () => {
           <div className="col-12 col-md-6 col-lg-3">
             <h5 className="text-white fw-bold"> <img src="/flightagencyhub_horizontal_logo.png" className="img-fluid w-80 rounded" /></h5>
             <p className="text-white-75 mb-4">
-              A modern travel information platform for smarter planning and confident journeys.
+              An independent travel information platform for destination research and trip-planning guidance.
             </p>
             <CTASection />
           </div>
-          <div className="col-12 col-sm-6 col-lg-2">
-            <h6 className="text-white fw-semibold">Explore</h6>
-            <ul className="list-unstyled">
-              <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/flights">
-                  Flights
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/destinations">
-                  Destinations
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/travel-guides">
-                  Travel Guides
-                </Link>
-              </li>
-            </ul>
-          </div>
+        
           <div className="col-12 col-sm-6 col-lg-2">
             <h6 className="text-white fw-semibold">Company</h6>
             <ul className="list-unstyled">
@@ -55,7 +36,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-12 col-sm-6 col-lg-2">
+          <div className="col-12 col-sm-6 col-lg-3">
             <h6 className="text-white fw-semibold">Legal</h6>
             <ul className="list-unstyled">
               <li className="mb-2">
@@ -80,9 +61,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-
-          <div className="col-12 col-sm-6 col-lg-3">
+          <div className="col-12 col-sm-6 col-lg-2">
             <h6 className="text-white fw-semibold">Contact</h6>
             <div className="text-white-75">
               <p className="mb-2">Phone</p>

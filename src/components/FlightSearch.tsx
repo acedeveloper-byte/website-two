@@ -84,7 +84,7 @@ const FlightSearch = () => {
 
         <form onSubmit={handleSubmit} className="fare-eazy-search-grid">
           <div className="fare-eazy-field">
-            <label htmlFor="from">Leaving From</label>
+            <label htmlFor="from">Departure City</label>
             <div className="fare-eazy-input-wrap">
               <input
                 id="from"
@@ -98,7 +98,7 @@ const FlightSearch = () => {
           </div>
 
           <div className="fare-eazy-field">
-            <label htmlFor="to">Going To</label>
+            <label htmlFor="to">Destination</label>
             <div className="fare-eazy-input-wrap">
               <input
                 id="to"
@@ -210,7 +210,7 @@ const FlightSearch = () => {
 
           <div className="fare-eazy-field fare-eazy-action-field">
             <button type="submit" className="fare-eazy-submit-button">
-              Search flights
+              Research route
             </button>
           </div>
         </form>

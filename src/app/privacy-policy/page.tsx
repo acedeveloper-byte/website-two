@@ -4,7 +4,7 @@ export default function PrivacyPolicyPage() {
       <div className="text-center mb-5">
         <h1 className="fw-bold">Privacy Policy</h1>
         <p className="text-muted">
-          <strong>Effective Date: August 12, 2026</strong>
+          <strong>Effective Date: August 13, 2026</strong>
         </p>
       </div>
 

@@ -5,10 +5,11 @@ const CTASection = () => {
     <a
       href={`tel:${PHONE_NUMBER}`}
       className="human-agent-btn text-decoration-none"
+      aria-label="Call our general support line"
     >
-      <span className="human-agent-flag">🇺🇸</span>
+      <span className="human-agent-flag">📞</span>
       <span>
-        <small>Talk to Human Agent</small>
+        <small>General support</small>
         <strong>{PHONE_NUMBER_DISPLAY}</strong>
       </span>
     </a>

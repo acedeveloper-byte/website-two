@@ -10,6 +10,11 @@ import { SITE_NAME, PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../config';
 export const metadata: Metadata = {
   title: `${SITE_NAME} | Travel Information & Planning Directory`,
   description: 'An independent travel information directory offering travel planning guidance, flight route information, and assistance resources.',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -36,7 +41,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           className="mobile-cta-bar d-md-none d-flex align-items-center justify-content-between px-3 py-3 text-white text-decoration-none"
         >
           <div>
-            <strong>Talk to an Agent</strong>
+            <strong>General support</strong>
             <div className="small opacity-75">{PHONE_NUMBER_DISPLAY}</div>
           </div>
           <span className="btn btn-light btn-sm text-primary">Call</span>

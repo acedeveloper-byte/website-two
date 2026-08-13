@@ -6,9 +6,9 @@ export default function ContactPage() {
       <div className="row gy-4">
         <div className="col-lg-6">
           <h1 className="fw-bold">Contact</h1>
-          <p className="text-muted">Reach out for travel guidance, questions or assistance with destinations and flights.</p>
+          <p className="text-muted">Reach out for general website questions or travel information inquiries related to route and destination research.</p>
           <div className="card border-0 rounded-4 shadow-sm p-4">
-            <h5 className="fw-semibold">Talk to an Agent</h5>
+            <h5 className="fw-semibold">General Support</h5>
             <p className="text-muted mb-1">Phone</p>
             <p className="fw-bold">
               <a href={`tel:${PHONE_NUMBER}`} className="text-decoration-none text-dark">

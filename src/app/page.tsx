@@ -12,57 +12,57 @@ import { travelGuides } from '../data/guides';
 const featureItems = [
   {
     icon: 'bi-info-circle',
-    title: 'Flight Info',
-    description: 'Real-time updates, seating charts, and transparent pricing to help you choose the best route.',
+    title: 'Flight Information',
+    description: 'Review route details, destination information, and travel planning resources in one place.',
   },
   {
     icon: 'bi-geo-alt',
     title: 'Planning Resources',
-    description: 'Access comprehensive destination guides, visa requirements, and curated local insights.',
+    description: 'Browse destination information, route guides, and trip-planning references for general research.',
   },
   {
     icon: 'bi-calendar-check',
     title: 'Travel Planning',
-    description: 'Access resources to help plan your next trip.',
+    description: 'Use general travel information to compare trip ideas and plan a journey more clearly.',
   },
   {
     icon: 'bi-people',
-    title: 'Human Assistance',
-    description: '24/7 dedicated support from seasoned travel specialists ready to resolve any itinerary challenges.',
+    title: 'General Support',
+    description: 'Contact us for website questions or general travel information inquiries.',
   },
 ];
 
 const aboutSiteItems = [
   {
     title: `About ${SITE_NAME}`,
-    description: `${SITE_NAME} is a travel information platform built to help you plan with confidence, clarity and calm.`,
+    description: `${SITE_NAME} is an independent travel information platform created to help users research destinations, routes, and trip-planning details.`,
   },
   {
     title: `What ${SITE_NAME} Does`,
-    description: 'We provide travel information, destination insights, and friendly support resources for every journey.',
+    description: 'We provide general travel information, destination research, and helpful planning resources for travel preparation.',
   },
   {
-    title: 'Looking for Assistance?',
-    description: 'Our team is ready to support your travel questions with phone, planning guidance, and assistance.',
+    title: 'Need More Information?',
+    description: 'Our team can help with general website and travel information questions using the contact details provided on this site.',
   },
 ];
 
 const serviceItems = [
   {
-    title: 'Quick Flight Search',
-    description: 'Easily compare routes and general travel options so you know what to expect.',
+    title: 'Route Research',
+    description: 'Compare available route information and destination details for general planning purposes.',
   },
   {
-    title: 'Smart Destination Guides',
-    description: 'Discover places with destination tips, local highlights and essential travel facts.',
+    title: 'Destination Guides',
+    description: 'Explore traveler information, local highlights, and destination references for research and planning.',
   },
   {
-    title: 'Personalized Support',
-    description: 'Talk to a travel specialist for help with your itinerary, questions and planning.',
+    title: 'General Support',
+    description: 'Use the contact information provided for website questions and general travel information requests.',
   },
   {
-    title: 'Easy Trip Prep',
-    description: 'Simple tools and clear guidance to make planning stress-free and easy to follow.',
+    title: 'Trip Preparation',
+    description: 'Review travel planning resources and general travel details before making arrangements with a provider.',
   },
 ];
 
@@ -73,9 +73,9 @@ export default function Home() {
 
       <section className="container py-5">
         <div className="text-center mb-5">
-          <h2 className="h2 fw-bold">Everything You Need for Your Journey</h2>
+          <h2 className="h2 fw-bold">Travel information and planning resources</h2>
           <p className="text-muted mx-auto" style={{ maxWidth: 700 }}>
-            {SITE_NAME} brings flight tools, destination guides, and helpful support together in one place, so planning your next trip feels clear, calm, and confident.
+            {SITE_NAME} provides general travel information, destination references, and trip-planning resources to help you research options before booking with a travel provider.
           </p>
         </div>
         <div className="row g-4">
@@ -89,10 +89,10 @@ export default function Home() {
       </section>
       <section className="container py-5 section-dark rounded-5">
         <div className="text-center mb-5">
-          <span className="badge section-dark-badge mb-2">Why Choose Us</span>
-          <h2 className="h3 fw-bold text-white">Everything designed for a relaxed travel experience</h2>
+          <span className="badge section-dark-badge mb-2">Why Explore</span>
+          <h2 className="h3 fw-bold text-white">Useful travel research resources for trip planning</h2>
           <p className="text-white-75 mx-auto" style={{ maxWidth: 640 }}>
-            Plan with calm, compare destinations easily, and reach out to our support team whenever you need help.
+            Review destination information, route details, and general travel planning resources before making travel arrangements with a provider.
           </p>
         </div>
         <div className="row g-4">
@@ -108,8 +108,11 @@ export default function Home() {
       </section>
       <section className="container py-5">
         <div className="text-center mb-4">
+          <span className="badge section-dark-badge mb-2">Top routes</span>
           <h2 className="h3 fw-bold">Popular Flight Routes</h2>
-          <p className="text-muted mb-0">Explore domestic USA flight routes and discover useful travel information for your next trip.</p>
+          <p className="text-muted mb-0 mx-auto" style={{ maxWidth: 720 }}>
+            Explore common route ideas and travel information to support trip research and destination planning.
+          </p>
         </div>
         <div className="row g-4">
           {destinations.slice(0, 8).map((destination) => (
@@ -127,9 +130,9 @@ export default function Home() {
           </div>
           <div className="text-start mb-4">
             <span className="badge section-dark-badge mb-2">About Us</span>
-            <h2 className="h3 fw-bold text-white">A calmer way to plan your trip</h2>
+            <h2 className="h3 fw-bold text-white">Travel information designed for research and planning</h2>
             <p className="text-white-75 mb-0">
-              {SITE_NAME} helps you discover flight options, destination advice, and travel assistance with clarity and ease.
+              {SITE_NAME} provides general trip-planning resources, destination information, and route guidance to help travelers prepare for their journeys.
             </p>
           </div>
 

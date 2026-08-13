@@ -163,6 +163,45 @@ body {
   grid-template-columns: 1.25fr 1.75fr;
   min-height: 220px;
   overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(240,246,255,0.92));
+  border: 1px solid rgba(142, 170, 219, 0.25);
+}
+
+.destination-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(17, 56, 105, 0.06);
+  border: 1px solid rgba(17, 56, 105, 0.08);
+  color: var(--secondary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.destination-label {
+  color: var(--secondary);
+  margin-top: 0.9rem;
+}
+
+.destination-title {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.destination-copy {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.destination-meta {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(31, 90, 154, 0.78);
 }
 
 .route-card-media {
@@ -262,6 +301,145 @@ body {
   background: #f4f8ff;
   border-color: rgba(81, 132, 255, 0.35);
   color: var(--primary);
+}
+
+.faq-shell {
+  position: relative;
+  padding: 2.2rem 1.5rem 1.2rem;
+  border: 1px solid rgba(119, 151, 204, 0.24);
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(228, 239, 255, 0.85));
+  box-shadow: 0 28px 80px rgba(16, 35, 63, 0.10);
+  overflow: hidden;
+}
+
+.faq-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(88, 143, 255, 0.24) 0%, rgba(88, 143, 255, 0) 72%);
+  pointer-events: none;
+}
+
+.faq-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+}
+
+.faq-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(17, 56, 105, 0.06);
+  border: 1px solid rgba(17, 56, 105, 0.08);
+  color: var(--secondary);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.faq-title {
+  margin: 1rem 0 0.5rem;
+  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.faq-subtitle {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.faq-accordion {
+  position: relative;
+  z-index: 1;
+}
+
+.faq-item {
+  border: 1px solid rgba(151, 172, 214, 0.28) !important;
+  border-radius: 18px !important;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 26px rgba(20, 42, 82, 0.04);
+  margin-bottom: 0.9rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(20, 42, 82, 0.08);
+  border-color: rgba(80, 119, 196, 0.35) !important;
+}
+
+.faq-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--primary);
+  font-size: 1.01rem;
+  font-weight: 700;
+  border: none;
+  box-shadow: none;
+  transition: background 0.25s ease, color 0.25s ease, padding 0.25s ease;
+}
+
+.faq-button:focus {
+  box-shadow: none;
+}
+
+.faq-button:not(.collapsed) {
+  background: linear-gradient(135deg, rgba(17, 56, 105, 0.06), rgba(99, 159, 255, 0.08));
+  color: var(--secondary);
+}
+
+.faq-button::after {
+  flex-shrink: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-button:not(.collapsed)::after {
+  transform: rotate(180deg);
+}
+
+.faq-question-text {
+  display: block;
+  padding-right: 1.5rem;
+  text-align: left;
+  line-height: 1.55;
+}
+
+.faq-answer {
+  background: rgba(245, 248, 255, 0.9);
+  color: var(--muted);
+  line-height: 1.8;
+  padding: 1rem 1.25rem 1.2rem;
+  border-top: 1px solid rgba(151, 172, 214, 0.22);
+}
+
+.accordion-collapse {
+  transition: height 0.35s ease, opacity 0.35s ease;
+}
+
+.accordion-collapse:not(.show) {
+  opacity: 0;
+}
+
+.accordion-collapse.show {
+  opacity: 1;
 }
 
 .fare-eazy-search-grid {
