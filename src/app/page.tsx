@@ -33,7 +33,7 @@ const featureItems = [
 const aboutSiteItems = [
   {
     title: `What ${SITE_NAME} Is`,
-    description: `${SITE_NAME} is a free, independent travel information platform. We are not affiliated with any airline and do not process bookings or payments.`,
+    description: `${SITE_NAME} is a free, independent travel information platform.`,
   },
   {
     title: `How We Help`,

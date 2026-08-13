@@ -23,7 +23,7 @@ const Hero = () => {
             <FlightSearch />
           </div>
           <div className="alert alert-light alert-dismissible fade show mx-auto" style={{ maxWidth: '600px' }} role="alert">
-              <strong>Independent Travel Assistance:</strong> We are a free, third-party travel information platform not affiliated with any airline. Our team helps with airline contact information and general booking questions at no charge.
+              <strong>Independent Travel Assistance:</strong> We are a free, third-party travel information platform. Our team helps with airline contact information.
             </div>
         </div>
       </div>
