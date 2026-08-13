@@ -68,7 +68,6 @@ export default function Home() {
 
       <section className="container py-5">
         <div className="text-center mb-4">
-          <span className="badge section-dark-badge mb-2">Popular Routes</span>
           <h2 className="h3 fw-bold">Flight Route Research</h2>
           <p className="text-muted mb-0 mx-auto" style={{ maxWidth: 720 }}>
             Browse common travel routes with details on airports, flight duration, and carriers to help with your research.
