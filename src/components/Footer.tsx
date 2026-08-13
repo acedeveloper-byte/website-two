@@ -19,17 +19,13 @@ const Footer = () => {
             <h6 className="text-white fw-semibold">Company</h6>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/about">
+                <Link className="footer-link text-decoration-none fw-bold" href="/about">
                   About
                 </Link>
               </li>
+              
               <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/faq">
-                  FAQ
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/contact">
+                <Link className="footer-link text-decoration-none fw-bold" href="/contact">
                   Contact
                 </Link>
               </li>
@@ -39,24 +35,30 @@ const Footer = () => {
           <div className="col-12 col-sm-6 col-lg-3">
             <h6 className="text-white fw-semibold">Legal</h6>
             <ul className="list-unstyled">
-              <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/privacy-policy">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/terms">
-                  Terms & Conditions
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/disclaimer">
+               <li className="mb-2">
+                <Link className="footer-link text-decoration-none fw-bold" href="/disclaimer">
                   Disclaimer
                 </Link>
               </li>
               <li className="mb-2">
-                <Link className="footer-link text-decoration-none" href="/cancellation-refund">
+                <Link className="footer-link text-decoration-none fw-bold" href="/privacy-policy">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link className="footer-link text-decoration-none fw-bold" href="/terms">
+                  Terms & Conditions
+                </Link>
+              </li>
+             
+              <li className="mb-2">
+                <Link className="footer-link text-decoration-none fw-bold" href="/cancellation-refund">
                   Cancellation & Refund Policy
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link className="footer-link text-decoration-none fw-bold" href="/faq">
+                  Frequently Asked Questions
                 </Link>
               </li>
             </ul>
@@ -65,11 +67,11 @@ const Footer = () => {
             <h6 className="text-white fw-semibold">Contact</h6>
             <div className="text-white-75">
               <p className="mb-2">Phone</p>
-              <a className="d-block text-white fw-semibold text-decoration-none mb-3" href={`tel:${PHONE_NUMBER}`}>
+              <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-3" href={`tel:${PHONE_NUMBER}`}>
                 {PHONE_NUMBER_DISPLAY}
               </a>
               <p className="mb-2">Email</p>
-              <a className="d-block text-white fw-semibold text-decoration-none" href="mailto:support@flightagencyhub.com">
+              <a className="d-block text-white fw-semibold text-decoration-none fw-bold" href="mailto:support@flightagencyhub.com">
                 support@flightagencyhub.com
               </a>
             </div>

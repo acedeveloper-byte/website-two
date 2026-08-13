@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { SITE_NAME } from '../config';
 import CTASection from './CTASection';
 
 const navItems = [
-  { label: 'Flights', path: '/flights' },
+  { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'FAQ', path: '/faq' },
   { label: 'Contact', path: '/contact' },
@@ -14,13 +15,14 @@ const navItems = [
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky-top bg-white shadow-sm">
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <div className="container">
           <Link className="navbar-brand fw-bold text-dark" href="/">
-          <img src="/web_logo.png" className="img-fluid w-50" />
+            <img src="/web_logo.png" className="img-fluid" style={{ maxWidth: '150px', width: '100%' }} alt="Website logo" />
           </Link>
           <button
             className="navbar-toggler"
@@ -34,21 +36,27 @@ const Header = () => {
           </button>
           <div className={`collapse navbar-collapse ${open ? 'show' : ''}`} id="navbarContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-              {navItems.map((item) => (
-                <li className="nav-item" key={item.path}>
-                  <Link
-                    className="nav-link px-3 font-bold text-dark"
-                    href={item.path}
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {navItems.map((item) => {
+                const active = item.path === '/' ? pathname === '/' : false;
 
-       <li className="nav-item mt-3 mt-lg-0">
-<CTASection />
-</li>
+                return (
+                  <li className="nav-item" key={item.path}>
+                    <Link
+                      className={`nav-link px-2 px-md-3 py-2 py-lg-0 fw-bold text-sm ${active ? 'text-primary fw-semibold' : 'text-dark'}`}
+                      href={item.path}
+                      onClick={() => setOpen(false)}
+                      aria-current={active ? 'page' : undefined}
+                      style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
+
+              <li className="nav-item mt-3 mt-lg-0">
+                <CTASection />
+              </li>
             </ul>
           </div>
         </div>

@@ -36,7 +36,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <AOSProvider />
         <main>{children}</main>
         <Footer />
-        <a
+        {/* <a
           href={`tel:${PHONE_NUMBER}`}
           className="mobile-cta-bar d-md-none d-flex align-items-center justify-content-between px-3 py-3 text-white text-decoration-none"
         >
@@ -45,7 +45,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             <div className="small opacity-75">{PHONE_NUMBER_DISPLAY}</div>
           </div>
           <span className="btn btn-light btn-sm text-primary">Call</span>
-        </a>
+        </a> */}
       </body>
     </html>
   );

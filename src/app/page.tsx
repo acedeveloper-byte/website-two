@@ -121,29 +121,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container py-5 section-dark m-5 p-5 rounded-5">
-        <div className="row gy-4 align-items-center">
-          <div className="col-lg-7">
-
-          </div>
-          <div className="text-start mb-4">
-            <span className="badge section-dark-badge mb-2">About Us</span>
-            <h2 className="h3 fw-bold text-white">Travel information designed for research and planning</h2>
-            <p className="text-white-75 mb-0">
-              {SITE_NAME} provides general trip-planning resources, destination information, and route guidance to help travelers prepare for their journeys.
-            </p>
-          </div>
-
-
-          {aboutSiteItems.map((item) => (
-            <div className="col-lg-4" key={item.title}>
-              <div className="p-4 rounded-4 section-dark-card h-100">
-                <h5 className="fw-semibold mb-2 text-white">{item.title}</h5>
-                <p className="text-white-75 mb-0">{item.description}</p>
-              </div>
+      <section className="py-5 section-dark rounded-5 mx-2 mx-md-4 mx-lg-auto" style={{ marginTop: '3rem', marginBottom: '3rem', maxWidth: '1200px' }}>
+        <div className="px-3 px-md-5">
+          <div className="row gy-4">
+            <div className="col-12 mb-4">
+              <span className="badge section-dark-badge mb-2">About Us</span>
+              <h2 className="h3 fw-bold text-white">Travel information designed for research and planning</h2>
+              <p className="text-white-75 mb-0">
+                {SITE_NAME} provides general trip-planning resources, destination information, and route guidance to help travelers prepare for their journeys.
+              </p>
             </div>
-          ))}
 
+            {aboutSiteItems.map((item) => (
+              <div className="col-12 col-sm-6 col-lg-4" key={item.title}>
+                <div className="p-4 rounded-4 section-dark-card h-100">
+                  <h5 className="fw-semibold mb-2 text-white">{item.title}</h5>
+                  <p className="text-white-75 mb-0">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
