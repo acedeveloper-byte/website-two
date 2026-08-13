@@ -159,8 +159,6 @@ body {
 }
 
 .route-card {
-  display: grid;
-  grid-template-columns: 1.25fr 1.75fr;
   min-height: 220px;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(240,246,255,0.92));

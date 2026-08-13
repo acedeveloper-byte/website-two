@@ -1,5 +1,4 @@
 import { Destination } from '../data/destinations';
-import { PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../config';
 
 const DestinationCard = ({ destination }: { destination: Destination }) => {
   return (
@@ -8,7 +7,7 @@ const DestinationCard = ({ destination }: { destination: Destination }) => {
       data-aos="zoom-in"
       data-aos-delay="100"
     >
-      <div className="route-card-body p-4 d-flex flex-column justify-content-between">
+      <div className="card-body p-4 d-flex flex-column justify-content-between h-100">
         <div>
           <span className="destination-badge">Popular route</span>
           <p className="text-uppercase fw-bold mb-2 small destination-label">
