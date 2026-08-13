@@ -6,8 +6,9 @@ export function generateStaticParams() {
   return destinations.map((destination) => ({ slug: destination.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const destination = destinations.find((item) => item.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const destination = destinations.find((item) => item.slug === slug);
 
   if (!destination) {
     return {
@@ -22,8 +23,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function FlightRoutePage({ params }: { params: { slug: string } }) {
-  const destination = destinations.find((item) => item.slug === params.slug);
+export default async function FlightRoutePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const destination = destinations.find((item) => item.slug === slug);
 
   if (!destination) {
     notFound();
