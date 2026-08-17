@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AOSProvider from '../components/AOSProvider';
 import { SITE_NAME, PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../config';
+import ChatWidget from '../components/ChatWidget';
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} | Travel Information & Planning Directory`,
@@ -36,6 +37,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <AOSProvider />
         <main>{children}</main>
         <Footer />
+        <ChatWidget />
         {/* <a
           href={`tel:${PHONE_NUMBER}`}
           className="mobile-cta-bar d-md-none d-flex align-items-center justify-content-between px-3 py-3 text-white text-decoration-none"
