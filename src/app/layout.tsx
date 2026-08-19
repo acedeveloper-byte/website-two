@@ -45,6 +45,25 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             gtag('config', 'G-BQLCNDJVYT');
             gtag('config', 'AW-18394602086');
             gtag('config', 'G-WG65WMVC30');
+            gtag('config', 'AW-18394602086/M1g-CN2wnOQcEOa0ncNE', {
+              'phone_conversion_number': '(844) 585-5025'
+            });
+
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-18394602086/M1g-CN2wnOQcEOa0ncNE',
+                  'event_callback': callback
+                });
+              }
+              return false;
+            }
+            window.gtag_report_conversion = gtag_report_conversion;
           `}
         </Script>
 

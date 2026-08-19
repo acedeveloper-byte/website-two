@@ -1,6 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { SITE_NAME, PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../config';
 import CTASection from './CTASection';
+import { reportPhoneConversion } from '../utils/gtag';
 
 const Footer = () => {
   return (
@@ -69,7 +72,7 @@ const Footer = () => {
               <p className="mb-2">Address</p>
               <p className="d-block text-white fw-semibold mb-3 small">1098 S Milwaukee Ave Suite 200<br />Wheeling, IL 60090</p>
               <p className="mb-2">Phone</p>
-              <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-3" href={`tel:${PHONE_NUMBER}`}>
+              <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-3" href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion}>
                 {PHONE_NUMBER_DISPLAY}
               </a>
               <p className="mb-2">Email</p>

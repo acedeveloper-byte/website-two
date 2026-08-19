@@ -1,4 +1,7 @@
+'use client';
+
 import { PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../../config';
+import { reportPhoneConversion } from '../../utils/gtag';
 
 export default function ContactPage() {
   return (
@@ -13,7 +16,7 @@ export default function ContactPage() {
             <p className="fw-bold mb-3">1098 S Milwaukee Ave Suite 200<br />Wheeling, IL 60090</p>
             <p className="text-muted mb-1">Phone</p>
             <p className="fw-bold mb-3">
-              <a href={`tel:${PHONE_NUMBER}`} className="text-decoration-none text-dark">
+              <a href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion} className="text-decoration-none text-dark">
                 {PHONE_NUMBER_DISPLAY}
               </a>
             </p>

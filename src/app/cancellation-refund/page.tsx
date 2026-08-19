@@ -1,4 +1,7 @@
+'use client';
+
 import { SITE_NAME, PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../../config';
+import { reportPhoneConversion } from '../../utils/gtag';
 
 export default function CancellationRefundPage() {
   return (
@@ -160,7 +163,7 @@ export default function CancellationRefundPage() {
           Information concerning a particular reservation is subject to the terms applicable to that reservation at the time of purchase.
         </p>
         <p className="text-muted mb-0">
-          Travelers should retain their booking confirmation and review all applicable conditions before requesting a cancellation, change, or refund. For additional assistance, you may contact our travel support line at <a href={`tel:${PHONE_NUMBER}`} className="text-decoration-none fw-semibold">{PHONE_NUMBER_DISPLAY}</a>.
+          Travelers should retain their booking confirmation and review all applicable conditions before requesting a cancellation, change, or refund. For additional assistance, you may contact our travel support line at <a href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion} className="text-decoration-none fw-semibold">{PHONE_NUMBER_DISPLAY}</a>.
         </p>
       </div>
     </section>

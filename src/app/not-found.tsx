@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { PHONE_NUMBER } from '../config';
+import { reportPhoneConversion } from '../utils/gtag';
 
 export default function NotFound() {
   return (
@@ -15,7 +18,7 @@ export default function NotFound() {
           <Link href="/" className="btn btn-primary btn-lg px-4">
             Return Home
           </Link>
-          <a href={`tel:${PHONE_NUMBER}`} className="btn btn-outline-secondary btn-lg px-4">
+          <a href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion} className="btn btn-outline-secondary btn-lg px-4">
             Call Support
           </a>
         </div>
