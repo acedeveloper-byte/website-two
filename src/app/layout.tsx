@@ -46,7 +46,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             gtag('config', 'AW-18394602086');
             gtag('config', 'G-WG65WMVC30');
             gtag('config', 'AW-18394602086/M1g-CN2wnOQcEOa0ncNE', {
-              'phone_conversion_number': '(844) 585-5025'
+              'phone_conversion_number': '+1-844-585-5025'
             });
 
             function gtag_report_conversion(url) {
