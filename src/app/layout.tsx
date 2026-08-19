@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./globals.css";
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AOSProvider from '../components/AOSProvider';
@@ -21,15 +22,41 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <head><link
-  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
-  rel="stylesheet"
-/>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BQLCNDJVYT"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18394602086"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WG65WMVC30"
+          strategy="afterInteractive"
+        />
+        <Script id="google-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-  rel="stylesheet"
-/>
+            gtag('config', 'G-BQLCNDJVYT');
+            gtag('config', 'AW-18394602086');
+            gtag('config', 'G-WG65WMVC30');
+          `}
+        </Script>
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
 
       </head>
       <body>
@@ -37,7 +64,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <AOSProvider />
         <main>{children}</main>
         <Footer />
-        <ChatWidget />
+        {/* <ChatWidget /> */}
         {/* <a
           href={`tel:${PHONE_NUMBER}`}
           className="mobile-cta-bar d-md-none d-flex align-items-center justify-content-between px-3 py-3 text-white text-decoration-none"

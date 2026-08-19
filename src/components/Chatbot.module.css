@@ -179,6 +179,10 @@
   line-height: 1.55;
 }
 
+.messageText + .messageText {
+  margin-top: 8px;
+}
+
 .timestamp {
   display: block;
   margin-top: 5px;

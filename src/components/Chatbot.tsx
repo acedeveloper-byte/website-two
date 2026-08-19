@@ -17,6 +17,43 @@ const QUICK_REPLIES = [
   '📞 Talk to agent',
 ];
 
+const renderFormattedMessage = (text: string) => {
+  if (!text) return null;
+
+  // Format inline lists (e.g., " 1. ", " 2. ") onto new paragraph breaks
+  const normalizedText = text.replace(/ (\d+\.\s+)/g, '\n\n$1');
+  const paragraphs = normalizedText.split(/\n+/);
+
+  return paragraphs.map((paragraph, pIdx) => {
+    const trimmed = paragraph.trim();
+    if (!trimmed) return null;
+
+    // Parse **bold** tags cleanly without leaving raw asterisks
+    const parts: (string | React.ReactNode)[] = [];
+    const boldRegex = /\*\*([^*]+)\*\*/g;
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = boldRegex.exec(trimmed)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(trimmed.slice(lastIndex, match.index));
+      }
+      parts.push(<strong key={match.index}>{match[1]}</strong>);
+      lastIndex = boldRegex.lastIndex;
+    }
+
+    if (lastIndex < trimmed.length) {
+      parts.push(trimmed.slice(lastIndex));
+    }
+
+    return (
+      <p key={pIdx} className={styles.messageText}>
+        {parts}
+      </p>
+    );
+  });
+};
+
 const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
@@ -57,10 +94,10 @@ const Chatbot = () => {
       });
 
       const data = await response.json();
-
+      console.log(data)
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: data.reply || "Sorry, I couldn't process that. Please try again.",
+        text: data.response || "Sorry, I couldn't process that response. Please try again.",
         sender: 'bot',
         timestamp: new Date(),
       };
@@ -117,9 +154,8 @@ const Chatbot = () => {
         {messages.map((message) => (
           <div
             key={message.id}
-            className={`${styles.message} ${
-              message.sender === 'user' ? styles.userMessage : styles.botMessage
-            }`}
+            className={`${styles.message} ${message.sender === 'user' ? styles.userMessage : styles.botMessage
+              }`}
           >
             {message.sender === 'bot' && (
               <div className={styles.botAvatar}>
@@ -127,7 +163,7 @@ const Chatbot = () => {
               </div>
             )}
             <div className={styles.messageBubble}>
-              <p className={styles.messageText}>{message.text}</p>
+              {renderFormattedMessage(message.text)}
               <small className={styles.timestamp}>
                 {message.timestamp.toLocaleTimeString([], {
                   hour: '2-digit',
