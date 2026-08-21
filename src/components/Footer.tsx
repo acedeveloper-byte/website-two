@@ -28,6 +28,11 @@ const Footer = () => {
               </li>
               
               <li className="mb-2">
+                <Link className="footer-link text-decoration-none fw-bold" href="/assistance">
+                  Assistance
+                </Link>
+              </li>
+              <li className="mb-2">
                 <Link className="footer-link text-decoration-none fw-bold" href="/contact-us">
                   Contact
                 </Link>
