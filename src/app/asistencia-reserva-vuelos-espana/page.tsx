@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { SITE_NAME, PHONE_NUMBER, PHONE_NUMBER_DISPLAY } from '../../config';
+import { SITE_NAME, PHONE_NUMBER, PHONE_NUMBER_DISPLAY, SPAIN_PHONE_NUMBER, SPAIN_PHONE_NUMBER_DISPLAY } from '../../config';
 import CTASection from '../../components/CTASection';
 import { reportPhoneConversion } from '../../utils/gtag';
 
@@ -27,7 +27,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
 
   const bannerPhones = [
     { label: 'Asistencia en Estados Unidos', number: PHONE_NUMBER_DISPLAY, tel: `tel:${PHONE_NUMBER}`, flag: '🇺🇸' },
-    { label: 'Asistencia para España', number: '+34 900 680 248', tel: 'tel:+34900680248', flag: '🇪🇸' },
+    { label: 'Asistencia para España', number: SPAIN_PHONE_NUMBER_DISPLAY, tel: `tel:${SPAIN_PHONE_NUMBER}`, flag: '🇪🇸' },
   ];
 
   const faqs = [
@@ -53,7 +53,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
     },
     {
       q: '¿Cómo puedo contactar con FlightAgencyHub?',
-      a: `Puedes contactar con nuestro equipo mediante el número ${PHONE_NUMBER_DISPLAY} para solicitar información y orientación general sobre tus opciones de viaje. Esta atención no es un servicio oficial de ninguna aerolínea.`,
+      a: `Puedes contactar con nuestro equipo mediante ${PHONE_NUMBER_DISPLAY} o ${SPAIN_PHONE_NUMBER_DISPLAY} para solicitar información y orientación general sobre tus opciones de viaje. Esta atención no es un servicio oficial de ninguna aerolínea.`,
     },
   ];
 
@@ -230,7 +230,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
               onClick={reportPhoneConversion}
               className="btn btn-warning text-dark fw-bold rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2"
             >
-              <span>📞</span> Asistencia telefónica: {PHONE_NUMBER_DISPLAY}
+              <span>📞</span> Asistencia telefónica: {PHONE_NUMBER_DISPLAY} · {SPAIN_PHONE_NUMBER_DISPLAY}
             </a>
           </div>
 
@@ -377,7 +377,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
               </div>
               <div className="col-md-7">
                 <p className="text-muted mb-3">FlightAgencyHub es un sitio web independiente dedicado a reunir información útil para la planificación de viajes. Su objetivo es ayudarte a comprender opciones de vuelos, rutas, aeropuertos, horarios y condiciones antes de tomar una decisión.</p>
-                <p className="text-muted mb-0">Para solicitar orientación general, puedes contactar con nuestro equipo en <a href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion}>{PHONE_NUMBER_DISPLAY}</a>. La información y la asistencia no sustituyen los términos de la aerolínea o del proveedor con el que finalmente contrates.</p>
+                <p className="text-muted mb-0">Para solicitar orientación general, puedes contactar con nuestro equipo en <a href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion}>{PHONE_NUMBER_DISPLAY}</a> o <a href={`tel:${SPAIN_PHONE_NUMBER}`} onClick={reportPhoneConversion}>{SPAIN_PHONE_NUMBER_DISPLAY}</a>. La información y la asistencia no sustituyen los términos de la aerolínea o del proveedor con el que finalmente contrates.</p>
               </div>
             </div>
           </section>
