@@ -82,12 +82,18 @@ const Footer = () => {
               <p className="mb-2">{isSpanishAssistancePage ? 'Dirección' : 'Address'}</p>
               <p className="d-block text-white fw-semibold mb-3 small">1098 S Milwaukee Ave Suite 200<br />Wheeling, IL 60090</p>
               <p className="mb-2">{isSpanishAssistancePage ? 'Teléfono' : 'Phone'}</p>
-              <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-2" href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion}>
-                {PHONE_NUMBER_DISPLAY}
-              </a>
-              {isSpanishAssistancePage && (
-                <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-3" href={`tel:${SPAIN_PHONE_NUMBER}`} onClick={reportPhoneConversion}>
-                  {SPAIN_PHONE_NUMBER_DISPLAY}
+              {isSpanishAssistancePage ? (
+                <>
+                  <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-2" href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion}>
+                    🇺🇸 Estados Unidos: {PHONE_NUMBER_DISPLAY}
+                  </a>
+                  <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-3" href={`tel:${SPAIN_PHONE_NUMBER}`} onClick={reportPhoneConversion}>
+                    🇪🇸 España: {SPAIN_PHONE_NUMBER_DISPLAY}
+                  </a>
+                </>
+              ) : (
+                <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-3" href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion}>
+                  {PHONE_NUMBER_DISPLAY}
                 </a>
               )}
               <p className="mb-2">{isSpanishAssistancePage ? 'Correo electrónico' : 'Email'}</p>

@@ -225,13 +225,16 @@ export default function AsistenciaReservaVuelosEspanaPage() {
             <p className="mb-3 small text-white-75">
               Puedes contactar con nuestro equipo para obtener información y asistencia general relacionada con tus opciones de viaje. No somos el centro oficial de ninguna aerolínea.
             </p>
-            <a
-              href={`tel:${PHONE_NUMBER}`}
-              onClick={reportPhoneConversion}
-              className="btn btn-warning text-dark fw-bold rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2"
-            >
-              <span>📞</span> Asistencia telefónica: {PHONE_NUMBER_DISPLAY} · {SPAIN_PHONE_NUMBER_DISPLAY}
-            </a>
+            <div className="spain-contact-options">
+              <a href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion} className="spain-contact-option">
+                <span className="spain-contact-option__flag">🇺🇸</span>
+                <span><small>Estados Unidos</small><strong>{PHONE_NUMBER_DISPLAY}</strong></span>
+              </a>
+              <a href={`tel:${SPAIN_PHONE_NUMBER}`} onClick={reportPhoneConversion} className="spain-contact-option">
+                <span className="spain-contact-option__flag">🇪🇸</span>
+                <span><small>España</small><strong>{SPAIN_PHONE_NUMBER_DISPLAY}</strong></span>
+              </a>
+            </div>
           </div>
 
           {/* ── Información para comparar opciones ── */}

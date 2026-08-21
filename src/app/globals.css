@@ -1776,6 +1776,64 @@ body {
   font-weight: 800;
 }
 
+.human-agent-country {
+  color: inherit;
+}
+
+.human-agent-country:hover {
+  color: #ffcf72;
+}
+
+.human-agent-country small {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.spain-contact-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.spain-contact-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 210px;
+  padding: 0.7rem 1rem;
+  border-radius: 0.65rem;
+  background: #ffbf5b;
+  color: #17252b;
+  text-decoration: none;
+  text-align: left;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.spain-contact-option:hover {
+  color: #17252b;
+  background: #ffd486;
+  transform: translateY(-2px);
+}
+
+.spain-contact-option__flag {
+  font-size: 1.65rem;
+}
+
+.spain-contact-option span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.spain-contact-option small {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.spain-contact-option strong {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
 @media (max-width: 991px) {
   .human-agent-btn {
     width: 100%;
@@ -1823,6 +1881,16 @@ body {
   .navbar .navbar-toggler {
     padding: 0.25rem 0.45rem;
     font-size: 0.95rem;
+  }
+
+  .spain-contact-options {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .spain-contact-option {
+    width: 100%;
+    min-width: 0;
   }
 }
 footer {
