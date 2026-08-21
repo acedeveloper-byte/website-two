@@ -8,8 +8,13 @@ export const SPAIN_PHONE_NUMBER_DISPLAY = '+34 900 680 248';
 export const COUNTRY_PHONE_NUMBERS = {
   USA: {
     name: 'USA',
-    display: '+1-844-585-5025', // Replace with your USA phone number
-    raw: '+18664329039',
+    display: '+1-844-585-5025',
+    raw: '+18445855025',
+  },
+  SPAIN: {
+    name: 'Spain',
+    display: '+34 900 680 248',
+    raw: '+34900680248',
   },
   UK: {
     name: 'UK',

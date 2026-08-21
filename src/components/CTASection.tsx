@@ -9,19 +9,22 @@ const CTASection = () => {
 
   if (isSpanishAssistancePage) {
     return (
-      <div className="human-agent-btn text-decoration-none" aria-label="Líneas de asistencia para viajes">
-        <span className="human-agent-flag">📞</span>
-        <span>
-          <a href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion} className="human-agent-country text-decoration-none d-block">
-            <small>🇺🇸 Estados Unidos</small>
+      <>
+        <a href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion} className="human-agent-btn text-decoration-none" aria-label={`Línea de asistencia de Estados Unidos: ${PHONE_NUMBER_DISPLAY}`}>
+          <span className="human-agent-flag country-flag country-flag--usa" aria-hidden="true" />
+          <span className="human-agent-country">
+            <small>Estados Unidos</small>
             <strong>{PHONE_NUMBER_DISPLAY}</strong>
-          </a>
-          <a href={`tel:${SPAIN_PHONE_NUMBER}`} onClick={reportPhoneConversion} className="human-agent-country text-decoration-none d-block">
-            <small>🇪🇸 España</small>
+          </span>
+        </a>
+        <a href={`tel:${SPAIN_PHONE_NUMBER}`} onClick={reportPhoneConversion} className="human-agent-btn text-decoration-none" aria-label={`Línea de asistencia de España: ${SPAIN_PHONE_NUMBER_DISPLAY}`}>
+          <span className="human-agent-flag country-flag country-flag--spain" aria-hidden="true" />
+          <span className="human-agent-country">
+            <small>España</small>
             <strong>{SPAIN_PHONE_NUMBER_DISPLAY}</strong>
-          </a>
-        </span>
-      </div>
+          </span>
+        </a>
+      </>
     );
   }
 

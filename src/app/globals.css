@@ -1758,6 +1758,82 @@ body {
   font-size: 29px;
 }
 
+.country-flag {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 1.35rem;
+  border: 1px solid rgba(17, 29, 35, 0.18);
+  border-radius: 0.2rem;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.country-flag--usa {
+  background:
+    linear-gradient(90deg, #183b8f 0 42%, transparent 42%),
+    repeating-linear-gradient(to bottom, #c9233f 0 10%, #fff 10% 20%);
+  position: relative;
+}
+
+.country-flag--usa::after {
+  content: '••••';
+  position: absolute;
+  left: 0.18rem;
+  top: 0.05rem;
+  width: 0.65rem;
+  color: #fff;
+  font-size: 0.38rem;
+  line-height: 0.45rem;
+  letter-spacing: 0.08rem;
+  word-spacing: 0.08rem;
+}
+
+.country-flag--spain {
+  background: linear-gradient(to bottom, #aa151b 0 25%, #f1bf00 25% 75%, #aa151b 75% 100%);
+}
+
+.footer-country-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  margin-bottom: 0.65rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.45rem;
+  background: rgba(255, 255, 255, 0.06);
+  line-height: 1.25;
+}
+
+.footer-country-phone > span:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.footer-country-phone strong {
+  color: #fff;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.footer-country-phone:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+footer .human-agent-btn {
+  display: flex;
+  margin-left: 0;
+  margin-bottom: 0.6rem;
+}
+
+footer .human-agent-btn + .human-agent-btn {
+  margin-left: 0;
+}
+
 .human-agent-btn small,
 .human-agent-btn strong {
   display: block;
@@ -1786,6 +1862,10 @@ body {
 
 .human-agent-country small {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.human-agent-btn + .human-agent-btn {
+  margin-left: 0.5rem;
 }
 
 .spain-contact-options {
@@ -1847,6 +1927,15 @@ body {
     border-radius: 30px;
   }
 
+  .navbar .human-agent-btn + .human-agent-btn {
+    margin-left: 0.35rem;
+  }
+
+  footer .human-agent-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
   .navbar .human-agent-flag {
     width: 32px;
     height: 32px;
@@ -1866,6 +1955,29 @@ body {
   .navbar .human-agent-btn {
     padding: 3px 8px 3px 3px;
     gap: 4px;
+  }
+
+  .navbar .human-agent-btn + .human-agent-btn {
+    margin-left: 0.2rem;
+  }
+
+  footer .human-agent-btn {
+    max-width: 100%;
+    padding-right: 0.65rem;
+  }
+
+  footer .human-agent-btn strong {
+    font-size: 0.95rem;
+    white-space: normal;
+  }
+
+  .footer-country-phone {
+    align-items: flex-start;
+    padding: 0.7rem;
+  }
+
+  .footer-country-phone strong {
+    font-size: 0.95rem;
   }
 
   .navbar .human-agent-flag {
@@ -1895,6 +2007,109 @@ body {
 }
 footer {
   background: var(--primary);
+  overflow-x: hidden;
+}
+
+footer .container,
+footer .row,
+footer [class*='col-'] {
+  min-width: 0;
+}
+
+footer a,
+footer p,
+footer h6 {
+  overflow-wrap: anywhere;
+}
+
+footer .footer-country-phone {
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  footer {
+    padding-top: 2.5rem !important;
+  }
+
+  footer .row {
+    row-gap: 2rem !important;
+  }
+
+  footer .col-12,
+  footer .col-sm-6,
+  footer .col-md-6,
+  footer .col-lg-2,
+  footer .col-lg-3 {
+    width: 100%;
+  }
+
+  footer .footer-country-phone {
+    width: 100%;
+  }
+
+  footer .human-agent-btn {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar .human-agent-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 128px;
+    padding: 3px 5px 3px 3px;
+    gap: 4px;
+  }
+
+  .navbar .human-agent-flag {
+    width: 25px;
+    height: 25px;
+    font-size: 0;
+  }
+
+  .navbar .human-agent-country {
+    min-width: 0;
+  }
+
+  .navbar .human-agent-country small,
+  .navbar .human-agent-country strong {
+    max-width: 85px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .navbar .human-agent-country small {
+    font-size: 0.58rem;
+  }
+
+  .navbar .human-agent-country strong {
+    font-size: 0.68rem;
+  }
+
+  footer .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  footer .footer-country-phone strong {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar .human-agent-btn {
+    max-width: 112px;
+  }
+
+  .navbar .human-agent-country small {
+    display: none;
+  }
+
+  .navbar .human-agent-country strong {
+    font-size: 0.64rem;
+  }
 }
 .feature-card {
   border-radius : 30px !important ;

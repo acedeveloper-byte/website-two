@@ -84,11 +84,13 @@ const Footer = () => {
               <p className="mb-2">{isSpanishAssistancePage ? 'Teléfono' : 'Phone'}</p>
               {isSpanishAssistancePage ? (
                 <>
-                  <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-2" href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion}>
-                    🇺🇸 Estados Unidos: {PHONE_NUMBER_DISPLAY}
+                  <a className="footer-country-phone text-white fw-semibold text-decoration-none fw-bold" href={`tel:${PHONE_NUMBER}`} onClick={reportPhoneConversion}>
+                    <span className="country-flag country-flag--usa" aria-hidden="true" />
+                    <span>Estados Unidos<strong>{PHONE_NUMBER_DISPLAY}</strong></span>
                   </a>
-                  <a className="d-block text-white fw-semibold text-decoration-none fw-bold mb-3" href={`tel:${SPAIN_PHONE_NUMBER}`} onClick={reportPhoneConversion}>
-                    🇪🇸 España: {SPAIN_PHONE_NUMBER_DISPLAY}
+                  <a className="footer-country-phone text-white fw-semibold text-decoration-none fw-bold" href={`tel:${SPAIN_PHONE_NUMBER}`} onClick={reportPhoneConversion}>
+                    <span className="country-flag country-flag--spain" aria-hidden="true" />
+                    <span>España<strong>{SPAIN_PHONE_NUMBER_DISPLAY}</strong></span>
                   </a>
                 </>
               ) : (
