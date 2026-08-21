@@ -1442,6 +1442,15 @@ body {
   line-height: 1.55;
 }
 
+.skybound-service-number {
+  display: block;
+  margin-bottom: 1rem;
+  color: #006672;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
 @media (max-width: 991px) {
   .skybound-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
