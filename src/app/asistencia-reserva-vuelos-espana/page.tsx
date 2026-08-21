@@ -57,6 +57,16 @@ export default function AsistenciaReservaVuelosEspanaPage() {
     },
   ];
 
+  const flightOptions = [
+    { title: 'Vuelos internacionales', desc: 'Destinos en Europa, América y el resto del mundo.', icon: 'public', tone: 'primary' },
+    { title: 'Solo ida', desc: 'Itinerarios flexibles con fecha de regreso abierta.', icon: 'arrow_right_alt', tone: 'secondary' },
+    { title: 'Ida y vuelta', desc: 'Itinerarios completos para vacaciones o negocios.', icon: 'sync', tone: 'tertiary' },
+    { title: 'Vuelos directos', desc: 'Sin escalas para el menor tiempo de trayecto.', icon: 'bolt', tone: 'sky' },
+    { title: 'Con escalas', desc: 'Alternativas económicas con paradas convenientes.', icon: 'route', tone: 'secondary' },
+    { title: 'Horarios flexibles', desc: 'Salidas matutinas, vespertinas o nocturnas.', icon: 'schedule', tone: 'blue' },
+    { title: 'Tarifas variadas', desc: 'Turista, turista superior, ejecutiva y flexible.', icon: 'loyalty', tone: 'tertiary' },
+  ];
+
   return (
     <div>
       <section className="spain-hero" aria-labelledby="spain-hero-title">
@@ -162,24 +172,23 @@ export default function AsistenciaReservaVuelosEspanaPage() {
             </div>
           </section>
 
-          <section className="skybound-feature-grid mb-5" aria-label="Opciones de vuelo">
-            {[
-              { title: 'Vuelos internacionales', desc: 'Destinos en Europa, América y el resto del mundo.', icon: 'public', tone: 'primary' },
-              { title: 'Solo ida', desc: 'Itinerarios flexibles con fecha de regreso abierta.', icon: 'arrow_right_alt', tone: 'secondary' },
-              { title: 'Ida y vuelta', desc: 'Itinerarios completos para vacaciones o negocios.', icon: 'sync', tone: 'tertiary' },
-              { title: 'Vuelos directos', desc: 'Sin escalas para el menor tiempo de trayecto.', icon: 'bolt', tone: 'sky' },
-              { title: 'Con escalas', desc: 'Alternativas económicas con paradas convenientes.', icon: 'route', tone: 'secondary' },
-              { title: 'Horarios flexibles', desc: 'Salidas matutinas, vespertinas o nocturnas.', icon: 'schedule', tone: 'blue' },
-              { title: 'Tarifas variadas', desc: 'Turista, turista superior, ejecutiva y flexible.', icon: 'loyalty', tone: 'tertiary' },
-            ].map((item, idx) => (
-              <article className="skybound-glass-card" key={idx}>
-                <div className={`skybound-icon skybound-icon--${item.tone}`}>
-                  <span className="material-symbols-outlined" aria-hidden="true">{item.icon}</span>
-                </div>
-                <h2>{item.title}</h2>
-                <p>{item.desc}</p>
-              </article>
-            ))}
+          <section className="skybound-feature-marquee mb-5" aria-label="Opciones de vuelo">
+            <div className="skybound-feature-marquee__viewport">
+              <div className="skybound-feature-marquee__track">
+                {[...flightOptions, ...flightOptions].map((item, idx) => (
+                  <article className="skybound-glass-card" key={`${item.title}-${idx}`} aria-hidden={idx >= flightOptions.length}>
+                    <div className={`skybound-icon skybound-icon--${item.tone}`}>
+                      <span className="material-symbols-outlined" aria-hidden="true">{item.icon}</span>
+                    </div>
+                    <h2>{item.title}</h2>
+                    <p>{item.desc}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="skybound-feature-marquee__hint" aria-hidden="true">
+              <span className="material-symbols-outlined"></span> Opciones destacadas
+            </div>
           </section>
 
           {/* ── Aeropuertos populares ── */}
@@ -271,7 +280,6 @@ export default function AsistenciaReservaVuelosEspanaPage() {
                 'Comparar tarifas disponibles entre distintas opciones',
                 'Comprender horarios de vuelos y tiempos de escala',
                 'Revisar la información de la reserva y del itinerario',
-                'Planificar viajes nacionales e internacionales',
               ].map((point, idx) => (
                 <div className="col-md-6" key={idx}>
                   <div className="d-flex align-items-start gap-2">

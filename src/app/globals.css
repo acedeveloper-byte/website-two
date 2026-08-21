@@ -1378,15 +1378,54 @@ body {
   line-height: 1.7;
 }
 
-.skybound-feature-grid {
+.skybound-feature-marquee {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.75rem 0.1rem 2rem;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.skybound-feature-marquee__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.skybound-feature-marquee__track {
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+  width: max-content;
+  animation: skybound-marquee 34s linear infinite;
+  will-change: transform;
+}
+
+.skybound-feature-marquee:hover .skybound-feature-marquee__track,
+.skybound-feature-marquee:focus-within .skybound-feature-marquee__track {
+  animation-play-state: paused;
+}
+
+.skybound-feature-marquee__hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  color: #527177;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.skybound-feature-marquee__hint .material-symbols-outlined {
+  font-size: 1rem;
 }
 
 .skybound-glass-card {
+  flex: 0 0 clamp(220px, 26vw, 290px);
   min-height: 220px;
   padding: 1.5rem;
   display: flex;
@@ -1451,10 +1490,9 @@ body {
   letter-spacing: 0.12em;
 }
 
-@media (max-width: 991px) {
-  .skybound-feature-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+@keyframes skybound-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 0.625rem)); }
 }
 
 @media (max-width: 575px) {
@@ -1470,14 +1508,27 @@ body {
     font-size: 1rem;
   }
 
-  .skybound-feature-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .skybound-feature-marquee {
+    padding-top: 0.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .skybound-feature-marquee__track {
+    gap: 0.85rem;
+    animation-duration: 28s;
   }
 
   .skybound-glass-card {
-    min-height: 180px;
+    flex-basis: min(76vw, 270px);
+    min-height: 185px;
     padding: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skybound-feature-marquee__track {
+    animation: none;
+    transform: translateX(0);
   }
 }
 
