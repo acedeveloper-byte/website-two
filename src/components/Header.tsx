@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { SITE_NAME } from '../config';
@@ -16,6 +16,19 @@ const navItems = [
 const Header = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const isSpanishAssistancePage = pathname === '/asistencia-reserva-vuelos-espana';
+  const localizedNavItems = isSpanishAssistancePage
+    ? [
+        { label: 'Inicio', path: '/' },
+        { label: 'Acerca de', path: '/about' },
+        { label: 'Preguntas frecuentes', path: '/faq' },
+        { label: 'Contacto', path: '/contact-us' },
+      ]
+    : navItems;
+
+  useEffect(() => {
+    document.documentElement.lang = isSpanishAssistancePage ? 'es' : 'en';
+  }, [isSpanishAssistancePage]);
 
   return (
     <header className="sticky-top bg-white shadow-sm">
@@ -41,7 +54,7 @@ const Header = () => {
 
           <div className={`collapse navbar-collapse ${open ? 'show' : ''}`} id="navbarContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-              {navItems.map((item) => {
+              {localizedNavItems.map((item) => {
                 const active = item.path === '/' ? pathname === '/' : false;
 
                 return (

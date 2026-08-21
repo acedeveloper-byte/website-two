@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import styles from './Chatbot.module.css';
 
 interface Message {
@@ -76,6 +76,7 @@ const renderFormattedMessage = (text: string) => {
 
 const Chatbot = () => {
   const router = useRouter();
+  const isSpanishAssistancePage = usePathname() === '/asistencia-reserva-vuelos-espana';
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -279,9 +280,11 @@ const Chatbot = () => {
         {/* Welcome card (always visible at top) */}
         <div className={styles.welcomeCard}>
           <div className={styles.welcomeEmoji}>👋</div>
-          <p className={styles.welcomeTitle}>Hi there! Welcome to FlightAgencyHub</p>
+          <p className={styles.welcomeTitle}>{isSpanishAssistancePage ? '¡Hola! Bienvenido a FlightAgencyHub' : 'Hi there! Welcome to FlightAgencyHub'}</p>
           <p className={styles.welcomeSubtitle}>
-            Ask me about flights, destinations, or travel planning. I&apos;m here to help!
+            {isSpanishAssistancePage
+              ? 'Pregúntame sobre vuelos, destinos o planificación de viajes. ¡Estoy aquí para ayudarte!'
+              : 'Ask me about flights, destinations, or travel planning. I&apos;m here to help!'}
           </p>
           {messages.length > 0 && (
             <button
@@ -305,7 +308,9 @@ const Chatbot = () => {
         {/* Quick reply chips */}
         {showQuickReplies && (
           <div className={styles.quickReplies}>
-            {QUICK_REPLIES.map((text) => (
+              {(isSpanishAssistancePage
+                ? ['✈️ Reservar un vuelo', '🌍 Mejores destinos', '💰 Mejores ofertas', '📞 Hablar con un asesor']
+                : QUICK_REPLIES).map((text) => (
               <button
                 key={text}
                 className={styles.quickReplyBtn}
@@ -337,7 +342,7 @@ const Chatbot = () => {
                     className={styles.continueButton}
                     onClick={() => router.push('/contact-us')}
                   >
-                    Continue &rarr;
+                    {isSpanishAssistancePage ? 'Continuar' : 'Continue'} &rarr;
                   </button>
                 </div>
               )}
@@ -378,7 +383,7 @@ const Chatbot = () => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Type your message…"
+            placeholder={isSpanishAssistancePage ? 'Escribe tu mensaje…' : 'Type your message…'}
             className={styles.input}
             disabled={isLoading}
             rows={1}
@@ -388,7 +393,7 @@ const Chatbot = () => {
             onClick={() => sendMessage()}
             disabled={isLoading || !inputValue.trim()}
             className={styles.sendButton}
-            aria-label="Send message"
+            aria-label={isSpanishAssistancePage ? 'Enviar mensaje' : 'Send message'}
           >
             <i className="bi bi-send-fill" />
           </button>
