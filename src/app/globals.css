@@ -777,6 +777,14 @@ body {
   overflow: hidden;
 }
 
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2, 12, 30, 0.65) 0%, rgba(3, 24, 47, 0.80) 50%, rgba(4, 18, 44, 0.92) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .hero-bg-image {
   object-fit: cover;
   object-position: center;
@@ -784,7 +792,7 @@ body {
 
 .hero-bg-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-bg-section .badge,
@@ -845,6 +853,49 @@ body {
   .human-agent-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .navbar .human-agent-btn {
+    width: auto;
+    padding: 4px 10px 4px 4px;
+    gap: 6px;
+    border-radius: 30px;
+  }
+
+  .navbar .human-agent-flag {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .navbar .human-agent-btn strong {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .navbar .navbar-brand img {
+    max-width: 110px !important;
+  }
+
+  .navbar .human-agent-btn {
+    padding: 3px 8px 3px 3px;
+    gap: 4px;
+  }
+
+  .navbar .human-agent-flag {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .navbar .human-agent-btn strong {
+    font-size: 11.5px;
+  }
+
+  .navbar .navbar-toggler {
+    padding: 0.25rem 0.45rem;
+    font-size: 0.95rem;
   }
 }
 footer {

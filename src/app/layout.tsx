@@ -83,7 +83,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <AOSProvider />
         <main>{children}</main>
         <Footer />
-        {/* <ChatWidget /> */}
+
         {/* <a
           href={`tel:${PHONE_NUMBER}`}
           className="mobile-cta-bar d-md-none d-flex align-items-center justify-content-between px-3 py-3 text-white text-decoration-none"

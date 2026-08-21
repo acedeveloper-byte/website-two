@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const CHAT_API_URL = 'http://bot.suamglobalventures.com/chat';
+const CHAT_API_URL = process.env.CHAT_API_URL || 'http://bot.suamglobalventures.com/chat';
 
 export async function POST(request: NextRequest) {
   try {

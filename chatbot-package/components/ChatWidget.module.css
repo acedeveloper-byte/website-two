@@ -1,0 +1,490 @@
+/* ── Floating Action Button ─────────────────────────────── */
+.floatingButton {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0b1f3a 0%, #1f5a9a 100%);
+  color: #ffffff;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow:
+    0 6px 24px rgba(11, 31, 58, 0.45),
+    0 0 0 0 rgba(31, 90, 154, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  z-index: 9999;
+  animation: fabPulse 2.8s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+@keyframes fabPulse {
+  0%, 100% {
+    box-shadow:
+      0 6px 24px rgba(11, 31, 58, 0.45),
+      0 0 0 0 rgba(31, 90, 154, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 6px 24px rgba(11, 31, 58, 0.45),
+      0 0 0 14px rgba(31, 90, 154, 0);
+  }
+}
+
+.floatingButton:hover {
+  transform: scale(1.12) translateY(-2px);
+  box-shadow:
+    0 10px 32px rgba(11, 31, 58, 0.55),
+    0 0 0 0 rgba(31, 90, 154, 0);
+  animation: none;
+}
+
+.floatingButton:active {
+  transform: scale(0.94);
+}
+
+/* notification badge */
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: linear-gradient(135deg, #e74c5a, #ff6b6b);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(231, 76, 90, 0.5);
+  animation: badgeBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes badgeBounce {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.15); }
+}
+
+/* ── Chat Window ───────────────────────────────────────── */
+.chatWindow {
+  position: fixed;
+  bottom: 104px;
+  right: 28px;
+  width: 400px;
+  height: 580px;
+  max-height: calc(100dvh - 140px);
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow:
+    0 24px 80px rgba(11, 31, 58, 0.22),
+    0 0 0 1px rgba(11, 31, 58, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: chatSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 99999;
+}
+
+@keyframes chatSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Header ────────────────────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #0b1f3a 0%, #1c3e6b 50%, #1f5a9a 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* subtle shine stripe */
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -30%;
+  width: 160%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.avatarRing {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  min-width: 0;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 6px rgba(52, 211, 153, 0.6);
+  animation: dotPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+.statusText {
+  font-size: 11.5px;
+  opacity: 0.78;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.closeButton {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: rotate(90deg);
+}
+
+/* ── Chat Content ──────────────────────────────────────── */
+.chatContent {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ── Powered-By Footer ─────────────────────────────────── */
+.poweredBy {
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 10.5px;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  background: #fafbfc;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+}
+
+/* ── Backdrop ──────────────────────────────────────────── */
+.backdrop {
+  display: none;
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* ── TABLET (≤1024px) ──────────────────────────────────── */
+/* ──────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .chatWindow {
+    width: 380px;
+    height: 540px;
+    max-height: calc(100dvh - 140px);
+  }
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* ── MOBILE (≤768px) — full-width drawer ───────────────── */
+/* ──────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .chatWindow {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 88dvh;
+    border-radius: 20px 20px 0 0;
+    animation: chatSlideUpMobile 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @keyframes chatSlideUpMobile {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .floatingButton {
+    bottom: 22px;
+    right: 22px;
+    width: 58px;
+    height: 58px;
+    font-size: 24px;
+  }
+
+  .badge {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .header {
+    padding: 16px;
+    padding-top: max(16px, env(safe-area-inset-top));
+  }
+
+  .avatarRing {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .closeButton {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+
+  .poweredBy {
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+  }
+
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 31, 58, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 99998;
+    animation: backdropIn 0.3s ease-out;
+  }
+}
+
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* ── SMALL PHONES (≤480px) ─────────────────────────────── */
+/* ──────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .chatWindow {
+    max-height: 94dvh;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .header {
+    padding: 12px 14px;
+    padding-top: max(12px, env(safe-area-inset-top));
+  }
+
+  .headerLeft {
+    gap: 10px;
+  }
+
+  .avatarRing {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 13.5px;
+  }
+
+  .statusText {
+    font-size: 10.5px;
+  }
+
+  .closeButton {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 13px;
+  }
+
+  .floatingButton {
+    bottom: 18px;
+    right: 18px;
+    width: 54px;
+    height: 54px;
+    font-size: 22px;
+  }
+
+  .poweredBy {
+    font-size: 9.5px;
+    padding: 6px 12px;
+    padding-bottom: max(6px, env(safe-area-inset-bottom));
+  }
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* ── VERY SMALL / SE-sized (≤360px) ────────────────────── */
+/* ──────────────────────────────────────────────────────── */
+@media (max-width: 360px) {
+  .chatWindow {
+    max-height: 96dvh;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .header {
+    padding: 10px 12px;
+  }
+
+  .avatarRing {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .headerLeft {
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 12.5px;
+  }
+
+  .statusRow {
+    gap: 4px;
+  }
+
+  .statusText {
+    font-size: 9.5px;
+  }
+
+  .statusDot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .closeButton {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 12px;
+  }
+
+  .floatingButton {
+    bottom: 14px;
+    right: 14px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* ── LANDSCAPE PHONES ──────────────────────────────────── */
+/* ──────────────────────────────────────────────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .chatWindow {
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: min(420px, 60vw);
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+  }
+
+  .floatingButton {
+    bottom: 14px;
+    right: 14px;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .header {
+    padding: 10px 16px;
+  }
+
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 31, 58, 0.5);
+    z-index: 99998;
+  }
+}

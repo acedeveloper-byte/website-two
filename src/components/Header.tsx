@@ -19,21 +19,26 @@ const Header = () => {
 
   return (
     <header className="sticky-top bg-white shadow-sm">
-      <nav className="navbar navbar-expand-lg navbar-light bg-white">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white py-2">
         <div className="container">
-          <Link className="navbar-brand fw-bold text-dark" href="/">
-            <img src="/web_logo.png" className="img-fluid" style={{ maxWidth: '150px', width: '100%' }} alt="Website logo" />
+          <Link className="navbar-brand fw-bold text-dark me-2" href="/">
+            <img src="/web_logo.png" className="img-fluid" style={{ maxWidth: '140px', width: '100%' }} alt="Website logo" />
           </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            aria-controls="navbarContent"
-            aria-expanded={open}
-            aria-label="Toggle navigation"
-            onClick={() => setOpen((value) => !value)}
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          
+          <div className="d-flex align-items-center gap-2 d-lg-none">
+            <CTASection />
+            <button
+              className="navbar-toggler"
+              type="button"
+              aria-controls="navbarContent"
+              aria-expanded={open}
+              aria-label="Toggle navigation"
+              onClick={() => setOpen((value) => !value)}
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
           <div className={`collapse navbar-collapse ${open ? 'show' : ''}`} id="navbarContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
               {navItems.map((item) => {
@@ -54,7 +59,7 @@ const Header = () => {
                 );
               })}
 
-              <li className="nav-item mt-3 mt-lg-0">
+              <li className="nav-item mt-3 mt-lg-0 d-none d-lg-block">
                 <CTASection />
               </li>
             </ul>
