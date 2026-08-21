@@ -33,27 +33,27 @@ export default function AsistenciaReservaVuelosEspanaPage() {
   const faqs = [
     {
       q: '¿FlightAgencyHub es una aerolínea?',
-      a: `No. ${SITE_NAME} es una plataforma independiente de información y asistencia para viajes. No opera vuelos, no es una compañía aérea y no representa oficialmente a ninguna aerolínea.`,
+      a: `No. ${SITE_NAME} es una plataforma independiente de información y asistencia para viajes. No opera vuelos ni representa oficialmente a ninguna aerolínea.`,
     },
     {
       q: '¿FlightAgencyHub está afiliado a alguna aerolínea?',
-      a: `${SITE_NAME} no afirma tener una afiliación, patrocinio o respaldo oficial de ninguna aerolínea, salvo que se indique expresamente en un caso concreto.`,
+      a: `${SITE_NAME} es un servicio independiente y no afirma tener afiliación, patrocinio o respaldo oficial de ninguna aerolínea, salvo que se indique expresamente.`,
     },
     {
       q: '¿Las tarifas de vuelos están garantizadas?',
-      a: 'No. Los precios, horarios y plazas disponibles pueden cambiar según la fecha, la demanda, la ruta, la aerolínea y las condiciones aplicables. Conviene revisar los datos actualizados antes de comprar.',
+      a: 'No. Los precios y la disponibilidad pueden cambiar según la fecha, demanda, ruta, aerolínea, tarifa y condiciones aplicables.',
     },
     {
       q: '¿Puedo cambiar o cancelar mi vuelo?',
-      a: 'Depende de la aerolínea, la tarifa, el billete y las condiciones de la reserva. Los cambios, cancelaciones, reembolsos y posibles cargos deben confirmarse según las reglas del proveedor correspondiente.',
+      a: 'Las condiciones de cambio, cancelación y reembolso dependen de la aerolínea, tarifa, billete y proveedor correspondiente.',
     },
     {
       q: '¿Qué información puedo consultar?',
-      a: 'Puedes solicitar información general sobre rutas, horarios, tarifas, aeropuertos, equipaje y condiciones de viaje. La información disponible puede variar y siempre deben consultarse los términos del proveedor antes de contratar.',
+      a: 'Puedes consultar información general sobre rutas, horarios, aeropuertos, equipaje, tarifas y condiciones de viaje.',
     },
     {
       q: '¿Cómo puedo contactar con FlightAgencyHub?',
-      a: `Puedes contactar con nuestro equipo a través del número ${PHONE_NUMBER_DISPLAY} para recibir información y asistencia general relacionada con tus opciones de viaje. Esta atención no es un servicio oficial de ninguna aerolínea.`,
+      a: `Puedes contactar con nuestro equipo mediante el número ${PHONE_NUMBER_DISPLAY} para solicitar información y orientación general sobre tus opciones de viaje. Esta atención no es un servicio oficial de ninguna aerolínea.`,
     },
   ];
 
@@ -85,7 +85,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
             </span>
             <h1 id="spain-hero-title">Asistencia para Reservas de Vuelos</h1>
             <p>
-              Explora opciones de vuelos internacionales y recibe información sobre rutas, horarios, tarifas y condiciones de viaje.
+              Explora información sobre vuelos y destinos internacionales, y consulta rutas, horarios, tarifas y condiciones de viaje antes de planificar tu reserva.
             </p>
             <div className="spain-hero__actions">
               <a
@@ -128,7 +128,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
               Información y asistencia para vuelos desde España
             </h2>
             <p className="lead mb-0">
-              Si estás planificando un viaje, puedes consultar información general sobre vuelos internacionales, aeropuertos, rutas, horarios y condiciones que pueden ayudarte a comparar alternativas.
+              Si estás planificando un viaje, puedes consultar información general sobre vuelos, destinos, aeropuertos, rutas, horarios y condiciones para valorar distintas alternativas.
             </p>
           </section>
 
@@ -197,7 +197,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
               <span className="badge bg-primary bg-opacity-10 text-primary fw-semibold px-3 py-2 rounded-pill mb-2">Aeropuertos</span>
               <h2 className="h3 fw-bold text-dark">Aeropuertos Populares en España</h2>
               <p className="text-muted mx-auto" style={{ maxWidth: '700px' }}>
-                Madrid, Barcelona, Palma de Mallorca, Málaga, Alicante, Valencia, Sevilla y Bilbao son algunos de los principales aeropuertos del país. Las rutas, horarios y tarifas pueden variar según la temporada, la fecha del viaje, la disponibilidad y la aerolínea; no todas las compañías operan desde cada aeropuerto.
+                Madrid, Barcelona, Palma de Mallorca, Málaga, Alicante, Valencia, Sevilla y Bilbao son algunos de los principales aeropuertos del país. Las rutas, horarios, disponibilidad y tarifas pueden variar según la fecha, la temporada, el aeropuerto, la aerolínea y las condiciones del proveedor; no todas las compañías operan desde cada aeropuerto.
               </p>
             </div>
 
@@ -234,13 +234,13 @@ export default function AsistenciaReservaVuelosEspanaPage() {
             </a>
           </div>
 
-          {/* ── Comparar precios ── */}
+          {/* ── Información para comparar opciones ── */}
           <div className="card border-0 rounded-4 shadow-sm p-4 p-md-5 mb-5 bg-white">
             <div className="row align-items-center gy-4">
               <div className="col-lg-5">
-                <h2 className="h3 fw-bold text-dark mb-3">Comparar Opciones de Vuelo y Precios</h2>
+                <h2 className="h3 fw-bold text-dark mb-3">Información para Comparar Opciones de Vuelo</h2>
                 <p className="text-muted mb-0">
-                  Los precios pueden variar según las fechas, la ruta, la disponibilidad y el tipo de tarifa. Antes de completar una reserva, revisa todos los detalles disponibles.
+                  Antes de elegir un vuelo, revisa las fechas, horarios, aeropuertos, escalas, equipaje, condiciones de la tarifa y precio final aplicable.
                 </p>
               </div>
               <div className="col-lg-7">
@@ -270,14 +270,14 @@ export default function AsistenciaReservaVuelosEspanaPage() {
           <div className="card border-0 rounded-4 shadow-sm p-4 p-md-5 mb-5 bg-white">
             <h2 className="h3 fw-bold text-dark mb-3">Asistencia con la Reserva de Vuelos</h2>
             <p className="text-muted mb-4">
-              Nuestra plataforma ofrece orientación independiente para personas que desean informarse sobre vuelos y planificar viajes desde España. No emitimos billetes ni sustituimos las condiciones del proveedor correspondiente.
+              {SITE_NAME} ofrece información y orientación independiente para personas que desean investigar opciones de vuelos y planificar sus viajes desde España. La información disponible puede variar y las condiciones finales dependen de la aerolínea o proveedor correspondiente. No emitimos billetes ni sustituimos las condiciones del proveedor correspondiente.
             </p>
 
             <div className="row g-3 mb-4">
               {[
-                'Encontrar opciones de vuelo adecuadas a tus fechas',
+                'Consultar información sobre opciones de vuelo según tus fechas y destino',
                 'Revisar rutas directas y con escalas disponibles',
-                'Comparar tarifas disponibles entre distintas opciones',
+                'Revisar las condiciones y los precios disponibles antes de realizar una reserva.',
                 'Comprender horarios de vuelos y tiempos de escala',
                 'Revisar la información de la reserva y del itinerario',
               ].map((point, idx) => (
@@ -294,6 +294,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
               <div>
                 <h5 className="fw-bold text-dark mb-1">Habla con un Asistente de Viajes</h5>
                 <p className="small text-muted mb-0">Contacta con nuestro equipo para consultar información general sobre tus opciones de viaje.</p>
+                <p className="small text-muted mb-0">Esta atención es independiente y no representa el servicio oficial de ninguna aerolínea.</p>
               </div>
               <CTASection />
             </div>
