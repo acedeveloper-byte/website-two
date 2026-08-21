@@ -27,7 +27,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
 
   const bannerPhones = [
     { label: 'Asistencia en Estados Unidos', number: PHONE_NUMBER_DISPLAY, tel: `tel:${PHONE_NUMBER}`, flag: '🇺🇸' },
-    { label: 'Asistencia para España', number: PHONE_NUMBER_DISPLAY, tel: `tel:${PHONE_NUMBER}`, flag: '🇪🇸' },
+    { label: 'Asistencia para España', number: '+34 900 680 248', tel: 'tel:+34900680248', flag: '🇪🇸' },
   ];
 
   const faqs = [
