@@ -75,7 +75,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
             </span>
             <h1 id="spain-hero-title">Asistencia para Reservas de Vuelos</h1>
             <p>
-              Explora opciones de vuelos nacionales e internacionales y recibe información sobre rutas, horarios, tarifas y condiciones de viaje.
+              Explora opciones de vuelos internacionales y recibe información sobre rutas, horarios, tarifas y condiciones de viaje.
             </p>
             <div className="spain-hero__actions">
               <a
@@ -118,7 +118,7 @@ export default function AsistenciaReservaVuelosEspanaPage() {
               Información y asistencia para vuelos desde España
             </h2>
             <p className="lead mb-0">
-              Si estás planificando un viaje, puedes consultar información general sobre vuelos nacionales e internacionales, aeropuertos, rutas, horarios y condiciones que pueden ayudarte a comparar alternativas.
+              Si estás planificando un viaje, puedes consultar información general sobre vuelos internacionales, aeropuertos, rutas, horarios y condiciones que pueden ayudarte a comparar alternativas.
             </p>
           </section>
 
